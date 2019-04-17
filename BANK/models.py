@@ -11,13 +11,11 @@ class Account(models.Model):
 
     class Meta:
         permissions = (
-            ('ip','192.168.1.49'),
+            ('ip', '192.168.1.49'),
         )
-
 
     def __str__(self):
         return self.account_number
-
 
 
 """
@@ -38,5 +36,3 @@ class Topup(models.Model):
     amount = models.DecimalField(max_digits=15, decimal_places=3)
     transection_time = models.DateTimeField(default=timezone.now)
 """
-
-

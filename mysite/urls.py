@@ -19,6 +19,6 @@ from BANK import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/',views.Helloview.as_view()),
-    path('accountlist', views.Accountlist.as_view()),
+    path('accountlist/', views.Accountlist.as_view()),
 
 ]

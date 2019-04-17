@@ -1,0 +1,56 @@
+{
+  "personal_information_form": {
+    "applicants_name": "sharif",
+    "date_of_birth": " ",
+    "gender": "male",
+    "nationality": "bangladeshi",
+    "parmanent_address": "East_razabazar,dhaka-1205",
+    "current_address": "East_razabazar,dhaka-1205",
+    "contact_number": "01780515523",
+    "email_id": "sharif@gmail.com",
+    "national_id_number": "19931234123444134",
+    "text_identification_number(tin)": "12345"
+  },
+  "business_profile": {
+    "current_business_nature": "none",
+    "type_of_business": {
+      "sole_proprietorship": false,
+      "private_limited": false,
+      "dealership": true,
+      "partnership": true,
+      "public_limited": false
+    },
+    "current_business_address": "East_razabazar,dhaka-1205",
+    "involved_industries": "JBL",
+    "business_supervision": {
+      "supervise_personally": true,
+      "supervise_by_others": false
+    },
+    "current_average_monthly_income": 100000,
+    "expected_monthly_income_from_this_business": 150000,
+    "preferred_business_location": "East_razabazar,dhaka-1205",
+    "partner_name": "Arif",
+    "address": "West_razabazar,dhaka-1205",
+    "gender": "male",
+    "existing_business_type": "none",
+    "contact_number": "01780515523"
+  },
+  "referece": [
+    {
+      "name": "arif",
+      "address": "West_razabazar,dhaka-1205",
+      "contact_number": "01780515523",
+      "national_id": "19931234123444134",
+      "signature": " "
+    },
+    {
+      "name": "sharif",
+      "address": "East_razabazar,dhaka-1205",
+      "contact_number": "01780515523",
+      "national_id": "19931234123444134",
+      "signature": " "
+    }
+  ],
+  "name": "sharif",
+  "date": " "
+}

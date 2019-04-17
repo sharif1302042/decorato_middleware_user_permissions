@@ -3,34 +3,29 @@ from rest_framework import status
 from rest_framework.response import Response
 from django.http import JsonResponse
 
+CHECK_URL = '/accountlist/'
 
-class MiddlewareMixin(object):
-    def __init__(self, get_response=None):
+
+class IPCheck:
+    def __init__(self, get_response):
         self.get_response = get_response
-        super(MiddlewareMixin, self).__init__()
 
-    def __call__(self, request):
-        response = None
-
-        if hasattr(self, 'process_request'):
-            response = self.process_request(request)
-
-        if not response:
-            response = self.get_response(request)
-
-        if hasattr(self, 'process_response'):
-            response = self.process_response(request, response)
+    def __call__(self, request, *args, **kwargs):
+        response = self.get_response(request)
         return response
 
+    def process_view(self, request, view_func, view_args, view_kwargs):
 
-class IPCheck(MiddlewareMixin):
-    def process_request(self, request):
-        return None
-
-    def process_response(self, request, response):
         ip = '192.168.1.49'
-        request_ip = request.META['REMOTE_ADDR']
-        if ip == request_ip:
-            return JsonResponse({'Message': 'You are ok'}, status=200)
+        path = request.path_info  # this return the requested url
 
-        return JsonResponse({'Message': 'Permission Denied'}, status=403)
+        request_ip = request.META['REMOTE_ADDR']
+
+        print(path, CHECK_URL)
+
+        if path == CHECK_URL:
+            if ip == request_ip:
+                return None
+                # return JsonResponse({'Message': 'You are ok'}, status=200)
+
+            return JsonResponse({'Message': 'Permission Denied'}, status=403)

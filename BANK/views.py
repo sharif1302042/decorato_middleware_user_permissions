@@ -11,19 +11,20 @@ from .serializers import AccountSerializer
 
 class Helloview(APIView):
 
-    def get(self,request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         request_ip = request.META['REMOTE_ADDR']
-        return JsonResponse({'Message': 'You are ok'}, status=200)
+        return JsonResponse({'Message': 'Hello World'}, status=200)
 
 
 class Accountlist(APIView):
 
-    @method_decorator(ip_check)
+    # @method_decorator(ip_check)
     def get(self, request, *args, **kwargs):
         accounts = Account.objects.all()
         serializer = AccountSerializer(accounts, many=True)
         return Response(serializer.data)
 
+    # @method_decorator(ip_check)
     def post(self, request, *args, **kwargs):
         account = Account.objects.create(
             account_number=request.data['account_number'],
